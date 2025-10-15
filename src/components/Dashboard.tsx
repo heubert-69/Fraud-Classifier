@@ -2,6 +2,8 @@ import { Card } from "@/components/ui/card";
 import { Upload, FileText, AlertTriangle, CheckCircle2, TrendingUp, TrendingDown, DollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Sun, Moon } from "lucide-react";
+import { useTheme } from "@/lib/theme";
 
 const Dashboard = () => {
   const metrics = [
@@ -78,6 +80,8 @@ const Dashboard = () => {
     },
   ];
 
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -86,10 +90,12 @@ const Dashboard = () => {
           <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
           <p className="text-muted-foreground">AI-powered financial fraud detection for Naga City</p>
         </div>
-        <Button className="bg-gradient-primary hover:opacity-90">
-          <Upload className="mr-2 h-4 w-4" />
-          Upload Document
-        </Button>
+        <div className="flex items-center gap-3">
+          <Button className="bg-gradient-primary hover:opacity-90">
+            <Upload className="mr-2 h-4 w-4" />
+            Upload Document
+          </Button>
+        </div>
       </div>
 
       {/* Metrics Grid */}

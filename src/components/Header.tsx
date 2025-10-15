@@ -1,7 +1,8 @@
-import { Search, Bell } from "lucide-react";
+import { Search, Bell, Sun, Moon } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useTheme } from "@/lib/theme";
 
 const Header = () => {
   return (
@@ -16,13 +17,28 @@ const Header = () => {
           />
         </div>
       </div>
-      <Button variant="ghost" size="icon" className="relative">
-        <Bell className="h-5 w-5" />
-        <Badge className="absolute -top-1 -right-1 h-5 w-5 rounded-full p-0 flex items-center justify-center bg-destructive text-xs">
-          3
-        </Badge>
-      </Button>
+      <div className="flex items-center gap-3">
+        {/** Theme toggle */}
+        <ThemeToggle />
+
+        <Button variant="ghost" size="icon" className="relative">
+          <Bell className="h-5 w-5" />
+          <Badge className="absolute -top-1 -right-1 h-5 w-5 rounded-full p-0 flex items-center justify-center bg-destructive text-xs">
+            3
+          </Badge>
+        </Button>
+      </div>
     </header>
+  );
+};
+
+ 
+const ThemeToggle = () => {
+  const { theme, toggleTheme } = useTheme();
+  return (
+    <button onClick={toggleTheme} title="Toggle theme" className="inline-flex items-center justify-center p-2 rounded-md border">
+      {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+    </button>
   );
 };
 

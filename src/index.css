@@ -75,4 +75,33 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+  
+  @layer base {
+    .dark {
+      --background: 220 20% 8%;
+      --foreground: 220 14% 90%;
+  
+      --card: 220 18% 12%;
+      --card-foreground: 220 14% 90%;
+  
+      --popover: 220 18% 12%;
+      --popover-foreground: 220 14% 90%;
+  
+      --primary: 221 83% 53%;
+      --primary-foreground: 0 0% 100%;
+  
+      --secondary: 214 32% 20%;
+      --secondary-foreground: 220 14% 90%;
+  
+      --muted: 220 18% 12%;
+      --muted-foreground: 220 12% 70%;
+  
+      --border: 220 18% 12%;
+      --input: 220 18% 12%;
+      --ring: 221 83% 53%;
+  
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+      --shadow-md: 0 6px 10px -1px rgba(0, 0, 0, 0.5);
+    }
+  }
 }
