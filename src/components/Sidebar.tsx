@@ -89,6 +89,14 @@ const Sidebar = () => {
             <p className="text-xs text-muted-foreground">admin@naga.gov.ph</p>
           </div>
         </div>
+        <div className="mt-3">
+          <NavLink
+            to="/logout"
+            className="w-full inline-flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium text-red-600 hover:bg-red-50"
+          >
+            Log out
+          </NavLink>
+        </div>
       </div>
     </div>
   );
