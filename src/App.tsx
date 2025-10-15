@@ -9,6 +9,7 @@ import Signup from "./pages/signup";
 import Logout from "./pages/logout";
 import Upload from "./pages/Upload";
 import Landing from "./pages/Landing";
+import LearnMore from "./pages/learnmore";
 import Documents from "./pages/Documents";
 import Alerts from "./pages/Alerts";
 import Analytics from "./pages/Analytics";
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/index" element={<RequireAuth><Index /></RequireAuth>} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/learnmore" element={<LearnMore />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/upload" element={<RequireAuth><Upload /></RequireAuth>} />
           <Route path="/documents" element={<RequireAuth><Documents /></RequireAuth>} />
