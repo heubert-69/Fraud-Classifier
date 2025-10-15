@@ -47,7 +47,7 @@ const Login = () => {
       <div className="w-full max-w-md bg-card p-8 rounded-lg shadow relative border border-slate-200 dark:border-slate-700">
         <button
           type="button"
-          onClick={() => navigate('/signup', { state: { from: (location.state as any)?.from } })}
+          onClick={() => navigate('/')}
           aria-label="Go to signup"
           className="absolute left-4 top-4 inline-flex items-center justify-center p-2 rounded-md text-foreground hover:bg-muted/20 dark:text-foreground dark:hover:bg-muted/30"
         >
