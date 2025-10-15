@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   const navigation = [
-    { name: "Dashboard", href: "/", icon: LayoutDashboard },
+    { name: "Dashboard", href: "/index", icon: LayoutDashboard },
     { name: "Upload", href: "/upload", icon: Upload },
     { name: "Documents", href: "/documents", icon: FileText },
     { name: "Alerts", href: "/alerts", icon: AlertTriangle },

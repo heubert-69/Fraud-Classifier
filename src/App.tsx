@@ -8,6 +8,7 @@ import Login from "./pages/login";
 import Signup from "./pages/signup";
 import Logout from "./pages/logout";
 import Upload from "./pages/Upload";
+import Landing from "./pages/Landing";
 import Documents from "./pages/Documents";
 import Alerts from "./pages/Alerts";
 import Analytics from "./pages/Analytics";
@@ -25,10 +26,12 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+
+          <Route path="/" element={<Landing />} />
+          <Route path="/index" element={<RequireAuth><Index /></RequireAuth>} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/logout" element={<Logout />} />
-          <Route path="/" element={<RequireAuth><Index /></RequireAuth>} />
           <Route path="/upload" element={<RequireAuth><Upload /></RequireAuth>} />
           <Route path="/documents" element={<RequireAuth><Documents /></RequireAuth>} />
           <Route path="/alerts" element={<RequireAuth><Alerts /></RequireAuth>} />
