@@ -13,7 +13,7 @@ const Login = () => {
   const [error, setError] = useState<string | null>(null);
 
   const location = useLocation();
-  const from = (location.state as any)?.from?.pathname || "/";
+  const from = (location.state as any)?.from?.pathname || "/index";
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -92,8 +92,13 @@ const Login = () => {
 
           </div>
           <div className="mt-4 text-center">
-            <span className="text-sm text-slate-700">Don't have an account? </span>
-            <button className="text-sm text-indigo-600 hover:underline" onClick={() => navigate('/signup')}>Sign up</button>
+            <span className="text-sm text-slate-600">Don't have an account? </span>
+            <button
+              className="text-sm text-indigo-600 hover:underline"
+              onClick={() => navigate('/signup', { state: { from: (location.state as any)?.from } })}
+            >
+              Sign up
+            </button>
           </div>
         </form>
       </div>

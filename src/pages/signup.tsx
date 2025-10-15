@@ -1,12 +1,13 @@
 import { useState } from "react";
-import { Eye, EyeOff } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { registerUser, setToken } from "@/lib/auth";
 
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const Signup = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = (location.state as any)?.from?.pathname || "/index";
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -44,9 +45,9 @@ const Signup = () => {
       return;
     }
 
-    // Auto-login after signup
+    // Auto-login after signup and go to the intended page or dashboard
     setToken("demo-token");
-    navigate("/");
+    navigate(from, { replace: true });
   };
 
   return (
