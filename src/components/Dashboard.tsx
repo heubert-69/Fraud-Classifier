@@ -107,9 +107,8 @@ const Dashboard = () => {
                 <p className="text-sm font-medium text-muted-foreground">{metric.title}</p>
                 <div className="flex items-baseline gap-2 mt-2">
                   <h3 className="text-2xl font-bold">{metric.value}</h3>
-                  <span className={`text-xs font-medium flex items-center gap-1 ${
-                    metric.trend === "up" ? "text-success" : "text-destructive"
-                  }`}>
+                  <span className={`text-xs font-medium flex items-center gap-1 ${metric.trend === "up" ? "text-success" : "text-destructive"
+                    }`}>
                     {metric.trend === "up" ? (
                       <TrendingUp className="h-3 w-3" />
                     ) : (
@@ -139,12 +138,11 @@ const Dashboard = () => {
           {recentAnalysis.map((item) => (
             <div
               key={item.id}
-              className="flex items-center justify-between p-4 rounded-lg border hover:bg-muted/50 transition-colors"
+              className="flex items-center justify-between p-4 rounded-lg border border-slate-200 dark:border-slate-600 bg-card hover:bg-muted/50 dark:hover:bg-slate-600 transition-colors"
             >
               <div className="flex items-start gap-4 flex-1">
-                <div className={`p-2 rounded-lg ${
-                  item.status === "fraud" ? "bg-destructive-light" : "bg-success-light"
-                }`}>
+                <div className={`p-2 rounded-lg ${item.status === "fraud" ? "bg-destructive-light" : "bg-success-light"
+                  }`}>
                   {item.status === "fraud" ? (
                     <AlertTriangle className="h-5 w-5 text-destructive" />
                   ) : (
