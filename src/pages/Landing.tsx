@@ -16,7 +16,7 @@ const Landing = () => {
                     <Link to="/login">
                         <Button className="px-6 py-3" size="lg">Get started</Button>
                     </Link>
-                    <Link to="/help">
+                    <Link to="/learnmore">
                         <Button variant="ghost" className="px-6 py-3" size="lg">Learn more</Button>
                     </Link>
                 </div>
