@@ -75,7 +75,10 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
-  
+  .theme-transition,
+  .theme-transition * {
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
   @layer base {
     .dark {
       --background: 220 20% 8%;

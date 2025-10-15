@@ -18,6 +18,14 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       const t = localStorage.getItem(THEME_KEY) as Theme | null;
       if (t === "light" || t === "dark") return t;
     } catch (e) {}
+
+    // Fallback to system preference
+    try {
+      if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        return "dark";
+      }
+    } catch (e) {}
+
     return "light";
   });
 
@@ -25,6 +33,10 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     try {
       localStorage.setItem(THEME_KEY, theme);
     } catch (e) {}
+    // Add a short transition class to animate theme change
+    document.documentElement.classList.add("theme-transition");
+    window.setTimeout(() => document.documentElement.classList.remove("theme-transition"), 300);
+
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
     } else {
