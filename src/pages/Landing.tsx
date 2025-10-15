@@ -1,10 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { Sun, Moon } from "lucide-react";
+import { useTheme } from "@/lib/theme";
 
 const Landing = () => {
     return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-background to-muted/20 p-6">
+            <ThemeToggle />
             <div className="max-w-5xl w-full text-center">
                 <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">FinAI — AI-Powered Financial Fraud Detection</h1>
                 <p className="text-lg sm:text-xl text-muted-foreground mb-8">
@@ -58,3 +61,16 @@ const Landing = () => {
 };
 
 export default Landing;
+
+const ThemeToggle = () => {
+    const { theme, toggleTheme } = useTheme();
+    return (
+        <button
+            onClick={toggleTheme}
+            title="Toggle theme"
+            className="fixed top-4 right-4 z-50 inline-flex items-center justify-center p-2 rounded-md border bg-card"
+        >
+            {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+        </button>
+    );
+};
