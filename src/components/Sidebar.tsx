@@ -20,8 +20,12 @@ const Sidebar = () => {
     <div className="flex h-screen w-64 flex-col bg-card border-r">
       {/* Logo */}
       <div className="flex h-16 items-center gap-2 px-6 border-b">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-primary">
-          <FileText className="h-5 w-5 text-white" />
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white">
+          <img
+            src="../../public/finAI.png"
+            alt="Logo"
+            className="h-10 w-10"
+          />
         </div>
         <div>
           <h1 className="text-xl font-bold">FinAI</h1>
