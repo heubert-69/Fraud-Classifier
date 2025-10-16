@@ -6,7 +6,7 @@ import joblib
 import pandas as pd
 
 # Load model
-model = joblib.load("fraud_detection_model.pkl")
+model = joblib.load("ClassifierModel.pkl")
 
 # Initialize FastAPI app
 app = FastAPI()
