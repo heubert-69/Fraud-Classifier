@@ -20,4 +20,4 @@ COPY . .
 EXPOSE 8501
 
 # Run the application
-CMD ["streamlit", "run", "ml_backend.py", "--server.port=8501", "--server.enableCORS=false"]
+CMD [uvicorn",  "main:ml_backend.py", "--server.port=8501", "--server.enableCORS=false"]
