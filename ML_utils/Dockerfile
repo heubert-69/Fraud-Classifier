@@ -20,4 +20,4 @@ COPY . .
 EXPOSE 8501
 
 # Run the application
-CMD ["uvicorn",  "main:ml_backend.py", "--server.port=8501", "--server.enableCORS=false"]
+CMD ["uvicorn",  "ml_backend:app", "--reload", "--host",  "0.0.0.0", "--port", "8000"]
