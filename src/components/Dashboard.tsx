@@ -2,6 +2,8 @@ import { Card } from "@/components/ui/card";
 import { Upload, FileText, AlertTriangle, CheckCircle2, TrendingUp, TrendingDown, DollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Sun, Moon } from "lucide-react";
+import { useTheme } from "@/lib/theme";
 
 const Dashboard = () => {
   const metrics = [
@@ -78,6 +80,8 @@ const Dashboard = () => {
     },
   ];
 
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -86,10 +90,12 @@ const Dashboard = () => {
           <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
           <p className="text-muted-foreground">AI-powered financial fraud detection for Naga City</p>
         </div>
-        <Button className="bg-gradient-primary hover:opacity-90">
-          <Upload className="mr-2 h-4 w-4" />
-          Upload Document
-        </Button>
+        <div className="flex items-center gap-3">
+          <Button className="bg-gradient-primary hover:opacity-90">
+            <Upload className="mr-2 h-4 w-4" />
+            Upload Document
+          </Button>
+        </div>
       </div>
 
       {/* Metrics Grid */}
@@ -101,9 +107,8 @@ const Dashboard = () => {
                 <p className="text-sm font-medium text-muted-foreground">{metric.title}</p>
                 <div className="flex items-baseline gap-2 mt-2">
                   <h3 className="text-2xl font-bold">{metric.value}</h3>
-                  <span className={`text-xs font-medium flex items-center gap-1 ${
-                    metric.trend === "up" ? "text-success" : "text-destructive"
-                  }`}>
+                  <span className={`text-xs font-medium flex items-center gap-1 ${metric.trend === "up" ? "text-success" : "text-destructive"
+                    }`}>
                     {metric.trend === "up" ? (
                       <TrendingUp className="h-3 w-3" />
                     ) : (
@@ -133,12 +138,11 @@ const Dashboard = () => {
           {recentAnalysis.map((item) => (
             <div
               key={item.id}
-              className="flex items-center justify-between p-4 rounded-lg border hover:bg-muted/50 transition-colors"
+              className="flex items-center justify-between p-4 rounded-lg border border-slate-200 dark:border-slate-600 bg-card hover:bg-muted/50 dark:hover:bg-slate-600 transition-colors"
             >
               <div className="flex items-start gap-4 flex-1">
-                <div className={`p-2 rounded-lg ${
-                  item.status === "fraud" ? "bg-destructive-light" : "bg-success-light"
-                }`}>
+                <div className={`p-2 rounded-lg ${item.status === "fraud" ? "bg-destructive-light" : "bg-success-light"
+                  }`}>
                   {item.status === "fraud" ? (
                     <AlertTriangle className="h-5 w-5 text-destructive" />
                   ) : (

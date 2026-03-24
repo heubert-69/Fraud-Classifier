@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   const navigation = [
-    { name: "Dashboard", href: "/", icon: LayoutDashboard },
+    { name: "Dashboard", href: "/index", icon: LayoutDashboard },
     { name: "Upload", href: "/upload", icon: Upload },
     { name: "Documents", href: "/documents", icon: FileText },
     { name: "Alerts", href: "/alerts", icon: AlertTriangle },
@@ -20,8 +20,12 @@ const Sidebar = () => {
     <div className="flex h-screen w-64 flex-col bg-card border-r">
       {/* Logo */}
       <div className="flex h-16 items-center gap-2 px-6 border-b">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-primary">
-          <FileText className="h-5 w-5 text-white" />
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white">
+          <img
+            src="../../public/finAI.png"
+            alt="Logo"
+            className="h-10 w-10"
+          />
         </div>
         <div>
           <h1 className="text-xl font-bold">FinAI</h1>
@@ -88,6 +92,14 @@ const Sidebar = () => {
             <p className="text-sm font-medium">Naga Admin</p>
             <p className="text-xs text-muted-foreground">admin@naga.gov.ph</p>
           </div>
+        </div>
+        <div className="mt-3">
+          <NavLink
+            to="/logout"
+            className="w-full inline-flex items-center justify-center px-3 py-2 rounded-md text-sm font-medium text-red-600 hover:bg-red-50"
+          >
+            Log out
+          </NavLink>
         </div>
       </div>
     </div>

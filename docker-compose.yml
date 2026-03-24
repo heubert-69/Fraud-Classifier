@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  backend:
+    build: ./ML_utils
+    container_name: ml_api_container
+    ports:
+      - "8000:8000"
+    restart: always
+
+  frontend:
+    build: .
+    container_name: final_frontend_app
+    ports:
+      - "3000:8080"
+    environment:
+      - VITE_API_URL=http://backend:8000
+    depends_on:
+      - backend
+    restart: always
